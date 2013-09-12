@@ -9,9 +9,8 @@ import java.io.*; //dsajfghjsaf
 
 import java.util.*;
 import java.util.StringTokenizer;
-import game.test.testClass;
 
-interface ATAQUE{
+interface Features{
     public static final int str_obrero=10;
     public static final int str_eeggcc=2;
     public static final int str_facultad=2;
@@ -28,12 +27,7 @@ interface ATAQUE{
     public static final int costo_eeggcc=12;
     public static final int costo_facultad=20;
 }
-
-interface Validacion{
-    
-}
-
-//Kref: NOTA: Reducir el tamnaho de codigo para Interprete
+//==============================================================================
 class InterpreteComandos{
     public int verificaComando(String s, Integer inX, Integer inY, Integer inZ, Integer inO, Integer inEg, Integer inEf, Integer inNivel){
         char a;
@@ -46,10 +40,10 @@ class InterpreteComandos{
         Integer n;
         String aux="";
         a = s.charAt(0);
-        
+       
         error = false;
         rValue = -1;
-        
+       
         s= s.toLowerCase();
         switch(a){
             case 's':
@@ -73,10 +67,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            x = n.intValue(); 
+                            x = n.intValue();
                         }
                         else{
                             error = true;
@@ -89,10 +83,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            y = n.intValue(); 
+                            y = n.intValue();
                         }
                         else{
                             error = true;
@@ -105,10 +99,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            z = n.intValue(); 
+                            z = n.intValue();
                         }
                         else{
                             error = true;
@@ -121,10 +115,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            o = n.intValue(); 
+                            o = n.intValue();
                         }
                         else{
                             error = true;
@@ -137,10 +131,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            eg = n.intValue(); 
+                            eg = n.intValue();
                         }
                         else{
                             error = true;
@@ -153,10 +147,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            ef = n.intValue(); 
+                            ef = n.intValue();
                         }
                         else{
                             error = true;
@@ -164,7 +158,7 @@ class InterpreteComandos{
                     }
                     else{
                         error = true;
-                    }                   
+                    }                  
                                      
                 }
                 if (!error){
@@ -172,7 +166,7 @@ class InterpreteComandos{
                 }
                 else{
                     rValue = -1;
-                } 
+                }
                 break;
             case 'd':
                 if (s.length()>10){
@@ -187,10 +181,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            x = n.intValue(); 
+                            x = n.intValue();
                         }
                         else{
                             error = true;
@@ -203,10 +197,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            y = n.intValue(); 
+                            y = n.intValue();
                         }
                         else{
                             error = true;
@@ -219,10 +213,10 @@ class InterpreteComandos{
                     if ((k != -1) && (!error) && (k+2<s.length())&&(s.charAt(k+2)=='<')){
                         aux = s.substring(k+2);
                         delim2 = aux.indexOf('>');
-                        
+                       
                         if(delim2 != -1){
                             n = new Integer(aux.substring(1,delim2));
-                            z = n.intValue(); 
+                            z = n.intValue();
                         }
                         else{
                             error = true;
@@ -256,7 +250,7 @@ class InterpreteComandos{
             default:
                 System.out.println("El comando ingresado no es válido, por favor intente nuevamente");
         }
-        
+       
         //asignar valores a parametros por referencia
         inX=x;
         inY=y;
@@ -265,12 +259,12 @@ class InterpreteComandos{
         inEf=ef;
         inO=o;
         inNivel=nivel;
-        
+       
         System.out.println("x:" +x + " y:"+y +" z:"+z + " eg:"+eg +" ef:"+ef + " o:"+o+" nivel:"+nivel +" rvalue:"+rValue);
         return rValue;
     }
     
-    public boolean isInteger(String string) {
+     public boolean isInteger(String string) {
         try {
             Integer.valueOf(string);
             return true;
@@ -279,27 +273,24 @@ class InterpreteComandos{
         }
     }
 }
-
 //==============================================================================
-
 class Renderizador{
     public void verNivel(Mapa mimapa, int nivel){
         char a[][];
         int i, j;
         a = mimapa.devolverNivel(nivel);
-
+ 
         for (j=0; j<mimapa.getJ(); j++){
             for (i=0;i<mimapa.getI();i++){
                 System.out.print(a[i][j]);
             }
             System.out.println();
-        }     
-    }   
+        }    
+    }  
 }
-
+ 
 //==============================================================================
-
-class equipo implements ATAQUE {
+class equipo implements Features {
     private int numObreros;
     private int numEeggcc;
     private int numFacultad;
@@ -310,34 +301,34 @@ class equipo implements ATAQUE {
     }
     public int ataque()
         {
-            int     str=this.numObreros*ATAQUE.str_obrero+
-                        this.numEeggcc*ATAQUE.str_eeggcc+
-                        this.numFacultad*ATAQUE.str_facultad;
-            int     dex=this.numObreros*ATAQUE.dex_obrero+
-                        this.numEeggcc*ATAQUE.dex_eeggcc+
-                        this.numFacultad*ATAQUE.dex_facultad;
-            double  inte=this.numObreros*ATAQUE.int_obrero+
-                         this.numEeggcc*ATAQUE.int_eeggcc+
-                         this.numFacultad*ATAQUE.int_facultad;
+            int     str=this.numObreros*Features.str_obrero+
+                        this.numEeggcc*Features.str_eeggcc+
+                        this.numFacultad*Features.str_facultad;
+            int     dex=this.numObreros*Features.dex_obrero+
+                        this.numEeggcc*Features.dex_eeggcc+
+                        this.numFacultad*Features.dex_facultad;
+            double  inte=this.numObreros*Features.int_obrero+
+                         this.numEeggcc*Features.int_eeggcc+
+                         this.numFacultad*Features.int_facultad;
         coin moneda;
         moneda=new coin(dex);
         if (moneda.lanzar())
-            return (int)(str*inte);
+            return (int)(str*inte); //critical
         else
             return str;
         }
-    public int costo()
+    public int costo() //por hora
         {
-        return   ATAQUE.costo_eeggcc*this.numEeggcc
-                +ATAQUE.costo_facultad*this.numFacultad
-                +ATAQUE.costo_obrero*this.numObreros;
+        return   Features.costo_eeggcc*this.numEeggcc
+                +Features.costo_facultad*this.numFacultad
+                +Features.costo_obrero*this.numObreros;
         }
-
-    public boolean rompen()
+ 
+    public boolean prob_imprudencia()
         {
-        int  pro= ATAQUE.wis_eeggcc*this.numEeggcc
-                 +ATAQUE.wis_facultad*this.numFacultad
-                 +ATAQUE.wis_obrero*this.numObreros;
+        int  pro= Features.wis_eeggcc*this.numEeggcc
+                 +Features.wis_facultad*this.numFacultad
+                 +Features.wis_obrero*this.numObreros;
         if (pro>0)
             {
                 coin moneda;
@@ -345,37 +336,37 @@ class equipo implements ATAQUE {
                 return moneda.lanzar();
             }
         else
-                return false; //ante era TRUE
+                return false; //antes era true
         }
 }
-
+ 
 //==============================================================================
-
+//==============================================================================
 class Mapa{
     private cubo [][][] distribucion;
     private int civi;
     int i,j,k,spawningRocas;
-
+ 
     public int getI() {
         return i;
     }
-
+ 
     public int getJ() {
         return j;
     }
-
+ 
     public int getK() {
         return k;
     }
-        
+       
     public Mapa(int i,int j,int k,int civi,int rocas)
-        {   
+        {  
             this.spawningRocas=rocas;
             this.i=i;
             this.j=j;
             this.k=k;
             this.civi=civi;
-            this.distribucion=new cubo[i][j][k]; 
+            this.distribucion=new cubo[i][j][k];
             ArrayList<Objeto> milistaObjetos;
             int a[][][];
             a=generaFoco(i,j,k);//Matrix de distribucion de obgetos
@@ -384,7 +375,7 @@ class Mapa{
                 for(int y=0;y<j;y++)
                     for(int x=0;x<k;x++)
                         {
-                            if (z==0)
+                            if (z==0)  //solo sera excavable en la superficie al principio
                                 this.distribucion[x][y][z]=new cubo(a[x][y][z],milistaObjetos,spawningRocas,true);
                             else
                                 this.distribucion[x][y][z]=new cubo(a[x][y][z],milistaObjetos,spawningRocas,false);
@@ -403,7 +394,7 @@ class Mapa{
     //            }
         }
     private ArrayList<Objeto> generarlista(int civilizacion)
-        {   
+        {  
             ArrayList<Objeto> milistaObjetos=new ArrayList<>();
             Objeto artefacto;
             try
@@ -412,9 +403,9 @@ class Mapa{
                     DataInputStream entrada = new DataInputStream(fstream);
                     BufferedReader buffer = new BufferedReader(new InputStreamReader(entrada));
                     String strLinea;
-                    while ((strLinea = buffer.readLine()) != null)   
+                    while ((strLinea = buffer.readLine()) != null)  
                         {
-
+ 
                             String delimt="_";
                             String []tokens= strLinea.split(delimt);
                             int civ = Integer.parseInt(tokens[1]);
@@ -443,7 +434,7 @@ class Mapa{
             int z1= 1+(int) (Math.random() * (k-2));
             double capa1,capa2;
             capa1=Math.sqrt(3.1);   //ANALIZAR PARA TAMAÑOS MULTIPLES
-            capa2=3;           
+            capa2=3;          
             b[x1][y1][z1]=10;
             double distancia;
             for(int z=0;z<k;z++)
@@ -468,8 +459,8 @@ class Mapa{
                         }
                     }
                 }
-
-
+ 
+ 
     //        for(int z=0;z<k;z++)
     //            {
     //                for(int y=0;y<j;y++)
@@ -512,9 +503,12 @@ class Mapa{
                     }
             return a;
         }
+   
+//    public void deasignar(int x,int y,int z,){
+       
+   // }
 }
 //==============================================================================
-
 class cubo{
     private char tipoCubo;
     private int cantidad;
@@ -555,7 +549,7 @@ class cubo{
                             this.cantidad++;
                         }
                 }
-
+ 
         }
     public int getavance()
         {
@@ -623,7 +617,6 @@ class cubo{
         }
 }
 //==============================================================================
-
 class Objeto{
     private String nombre;
     private int civi;
@@ -632,7 +625,7 @@ class Objeto{
     private int valor;
     public Objeto(String nombre,int civi,int rareza)
         {
-
+ 
             this.nombre=nombre;
             this.civi=civi;
             this.rareza=rareza;
@@ -685,12 +678,11 @@ class Objeto{
             this.valor/=3;   //SE ENCIENDE EL FLAG DE ROTO Y SE DISMINUYE EL PRECIO
         }
 }
-
 //CLASE MONEDA==================================================================
 class coin{ // LANZANDO UNA MONEDA CON DIFERENTES PROBABILIDADES
     private int proba;
     public coin(int a)
-        {   
+        {  
             if (a>100)
                 {
                     a/=100;
@@ -765,7 +757,7 @@ class resultado{
             cordenada punto;
             punto=new cordenada(i,j,k,artefacto);
             cordenadas.add(punto);
-
+ 
         }
 }
 //=========================================================================
@@ -797,64 +789,16 @@ public class Game {
         Scanner in = new Scanner(System.in);
         //printer
         PrintStream out = System.out;
-        //variables
-        /*
-        String nombPlayer;
-        String s;
-        int option,  sitArq, exit;
-        boolean valid;
-        //begin
-        //MAIN KEYVHINNG
-        exit = 0;
-        out.println("====== Mario Jones ========");
-        out.println("Bienvenido(:");
-        out.println("Por favor inserte su nombre");
-        nombPlayer = in.next();
-        out.println(nombPlayer + ", preparate para una gran aventura !");
-        out.println("Inserte la opcion que desea");
-        out.println("[1] = Jugar");
-        out.println("[2] = Salir");
-        valid = false;
-        do{
-            try{
-                s = in.next();
-                option = Integer.parseInt(s);
-            }catch(NumberFormatException e){
-                option = -1;
-            }
-            if(option==1 || option==2){
-                valid = true;
-                
-            }else{
-                //out.println("S = " + s);
-                out.println("Opcion incorrecta, por favor presiona 1 o 2");
-                
-            }
-        }while(!valid);
-        if(option==1){
-            //begin game
-
-            out.println("Deseas jugar en el sitio arquelogico 1 o 2 ?");
-            sitArq = in.nextInt();
-            //check
-            while(sitArq!=1 && sitArq!=2){
-                out.println("Sitio incorrecto ):");
-                sitArq = in.nextInt();
-            }
-            
-        }else{
-            out.println("Gracias por jugar");
-        }
-        */
-        //MAIN KEVIN
         //variables e inicialización
         boolean valid;
-        int option;
+        int option, nivel;
         String nombre, strOption;
         int obreros, generales, facultad;
         int plata, horas, puntos, civi;
         ArrayList<Objeto> inventario;  
         inventario = new ArrayList<>();
+        //inicializacion
+        boolean fl=false;
         //generar el interprete y las variables para almacenar los comandos ingresados
         InterpreteComandos interp = new InterpreteComandos();
         //welcome
@@ -863,22 +807,19 @@ public class Game {
          while(true){
             out.println("Si desea iniciar el juego presione 1, si desea terminar presione 0");
             valid = false;
-           
-            
             do{
                 strOption = in.next();
                 if(!(interp.isInteger(strOption)))
                     option = -1;
                 else
                     option = Integer.parseInt(strOption);
-                if(option==1 || option==2){
+                if(option==1 || option==0){
                     valid = true;
                 }else{
-                    out.println("Opcion incorrecta, por favor presiona 1 o 2");
+                    out.println("Opcion incorrecta, por favor presiona 1 o 0");
                 }
             }while(!valid);
             
-            strOption = in.next();
             if(option==1){
                 //pedir datos del usuario
                 out.println("***");
@@ -902,7 +843,7 @@ public class Game {
                     }
                 }
                 
-                //inicializar variables
+               //inicializar variables
                 plata = 12000;
                 horas = 24000;
                 puntos = 0;
@@ -910,12 +851,12 @@ public class Game {
                                
                 //crear mapa
                 Mapa mimapa= new Mapa(10,10,10,civi,10);
-                
+               
                 //renderizar el nivel más alto
                 Renderizador ren=new Renderizador();
                 ren.verNivel(mimapa, 1);
-                
                
+                //generar el interprete y las variables para almacenar los comandos ingresados
                 Integer inX = new Integer(-1);
                 Integer inY = new Integer(-1);
                 Integer inZ = new Integer (-1);
@@ -924,52 +865,60 @@ public class Game {
                 Integer inEf = new Integer (-1);
                 Integer inNivel = new Integer (-1);
                 int retVal;
-                            
+                in.nextLine();
                 //bucle principal
                 while ((horas > 0) && (plata >0)){
                     //usuario ingresa un comando
                     String comando;
-                    comando = in.next();
-                    
+                    comando = in.nextLine();
+                   
                     //usar clase InterpreteComandos
                     retVal = interp.verificaComando(comando, inX, inY, inZ, inO, inEg, inEf, inNivel);
+                   
                     switch (retVal){
                         case 0:
                             //ejecuta salir
-                            
+                            System.out.println("¿Seguro que desea salir del mapa actual? Presione 0 para salir, caso contrario presione 1");
+                            option=in.nextInt();
+                            in.nextLine();
+                            if(option==0){
+                                fl=true;
+                            }
                             break;
                         case 1:
                             //ejecuta verNivel
-                            
+                            out.println("Inserte nivel");
+                            nivel = in.nextInt();
+                            ren.verNivel(mimapa, nivel);
                             break;
                         case 2:
                             //ejecuta asignar
-                            
+                           
                             break;
                         case 3:
                             //ejecuta desasignar
-                            
+                           
                             break;
                         default:
-                            
+                           
                             break;                
                     }
-                    
+                    if(fl==true) break;
                 }
-                
+               
             }
             else if (option!=0){
-                out.println("Opción no válida");
-                out.println("***");
+                System.out.println("Opción no válida");
+                System.out.println("***");
             }
             else{
-                out.println("¿Seguro que desea salir del juego? Presione 0 para salir, caso contrario presione 1");
+                System.out.println("¿Seguro que desea salir del juego? Presione 0 para salir, caso contrario presione 1");
                 option = in.nextInt();
                 if (option == 0){
                     break;
                 }
                 else{
-                    out.println("***");
+                    System.out.println("***");
                 }
             }
         }
