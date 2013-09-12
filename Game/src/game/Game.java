@@ -268,6 +268,15 @@ class InterpreteComandos{
         System.out.println("x:" +x + " y:"+y +" z:"+z + " eg:"+eg +" ef:"+ef + " o:"+o+" nivel:"+nivel +" rvalue:"+rValue);
         return rValue;
     }
+    
+    public boolean isInteger(String string) {
+        try {
+            Integer.valueOf(string);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }
 
 //==============================================================================
@@ -788,11 +797,13 @@ public class Game {
         //printer
         PrintStream out = System.out;
         //variables
+        /*
         String nombPlayer;
         String s;
         int option,  sitArq, exit;
         boolean valid;
         //begin
+        //MAIN KEYVHINNG
         exit = 0;
         out.println("====== Mario Jones ========");
         out.println("Bienvenido(:");
@@ -812,6 +823,7 @@ public class Game {
             }
             if(option==1 || option==2){
                 valid = true;
+                
             }else{
                 //out.println("S = " + s);
                 out.println("Opcion incorrecta, por favor presiona 1 o 2");
@@ -831,6 +843,134 @@ public class Game {
             
         }else{
             out.println("Gracias por jugar");
+        }
+        */
+        //MAIN KEVIN
+        //variables e inicialización
+        boolean valid;
+        int option;
+        String nombre, strOption;
+        int obreros, generales, facultad;
+        int plata, horas, puntos, civi;
+        ArrayList<Objeto> inventario;  
+        inventario = new ArrayList<>();
+        //generar el interprete y las variables para almacenar los comandos ingresados
+        InterpreteComandos interp = new InterpreteComandos();
+        //welcome
+        out.println("=====Super Mario Jones!=====");
+        out.println("Bienvenido (:");
+         while(true){
+            out.println("Si desea iniciar el juego presione 1, si desea terminar presione 0");
+            valid = false;
+           
+            
+            do{
+                strOption = in.next();
+                if(!(interp.isInteger(strOption)))
+                    option = -1;
+                else
+                    option = Integer.parseInt(strOption);
+                if(option==1 || option==2){
+                    valid = true;
+                }else{
+                    out.println("Opcion incorrecta, por favor presiona 1 o 2");
+                }
+            }while(!valid);
+            
+            strOption = in.next();
+            if(option==1){
+                //pedir datos del usuario
+                out.println("***");
+                out.println("Ingrese su nombre y presione enter:");
+                nombre = in.next();
+                out.println("Bienvenid@ " + nombre + " ! Recuerde que cuenta con S/.12000 para financiar tu excavación y 2400 horas");
+                
+                
+                //pedir datos de la civilización
+                while(true){
+                    out.println("***");
+                    out.println("Ingrese el número de la civilización que desea visitar y presione enter:");
+                    out.println("1 Civilizacion A");
+                    out.println("2 Civilizacion B");
+                    civi = in.nextInt();
+                    if ((civi != 1)&&(civi !=2)){
+                        out.println("Numero ingresado inválido");
+                    }
+                    else{
+                        break;
+                    }
+                }
+                
+                //inicializar variables
+                plata = 12000;
+                horas = 24000;
+                puntos = 0;
+                inventario.clear();
+                               
+                //crear mapa
+                Mapa mimapa= new Mapa(10,10,10,civi,10);
+                
+                //renderizar el nivel más alto
+                Renderizador ren=new Renderizador();
+                ren.verNivel(mimapa, 1);
+                
+               
+                Integer inX = new Integer(-1);
+                Integer inY = new Integer(-1);
+                Integer inZ = new Integer (-1);
+                Integer inO = new Integer (-1);
+                Integer inEg = new Integer (-1);
+                Integer inEf = new Integer (-1);
+                Integer inNivel = new Integer (-1);
+                int retVal;
+                            
+                //bucle principal
+                while ((horas > 0) && (plata >0)){
+                    //usuario ingresa un comando
+                    String comando;
+                    comando = in.next();
+                    
+                    //usar clase InterpreteComandos
+                    retVal = interp.verificaComando(comando, inX, inY, inZ, inO, inEg, inEf, inNivel);
+                    switch (retVal){
+                        case 0:
+                            //ejecuta salir
+                            
+                            break;
+                        case 1:
+                            //ejecuta verNivel
+                            
+                            break;
+                        case 2:
+                            //ejecuta asignar
+                            
+                            break;
+                        case 3:
+                            //ejecuta desasignar
+                            
+                            break;
+                        default:
+                            
+                            break;                
+                    }
+                    
+                }
+                
+            }
+            else if (option!=0){
+                out.println("Opción no válida");
+                out.println("***");
+            }
+            else{
+                out.println("¿Seguro que desea salir del juego? Presione 0 para salir, caso contrario presione 1");
+                option = in.nextInt();
+                if (option == 0){
+                    break;
+                }
+                else{
+                    out.println("***");
+                }
+            }
         }
     }
 
