@@ -28,6 +28,9 @@ interface ATAQUE{
     public static final int costo_facultad=20;
 }
 
+interface Validacion{
+    
+}
 
 //Kref: NOTA: Reducir el tamnaho de codigo para Interprete
 class InterpreteComandos{
@@ -332,7 +335,7 @@ class equipo implements ATAQUE {
                 return moneda.lanzar();
             }
         else
-                return true;
+                return false; //ante era TRUE
         }
 }
 
@@ -774,7 +777,8 @@ class cordenada{
         }
 }
 
-//MAIN CLASS====================================================================
+
+//====================================================================
 
 public class Game {
     
