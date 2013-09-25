@@ -75,7 +75,7 @@ class InterpreteComandos {
                 rValue = -1;
             }
             else{             
-                rValue = 1;
+                rValue = 0;
             }
         }
         else if (comando.compareTo("asignar")==0){
