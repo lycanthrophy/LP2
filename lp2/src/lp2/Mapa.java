@@ -90,5 +90,28 @@ class Mapa {
             }
         return b;
     }
+    
+    public char[][] devolverNivel(int z)
+    {
+        z=z-1;
+        if  ((z>=this.k)||(z<=0))
+        {
+            //NIVEL VALIDO O SACA UN MENSAJE Y DEVUELVE NULL
+            System.out.println("NO ES UN NIVEL VALIDO SOLO EXISTEN  "+this.k+"  Niveles");
+            return null;
+        }
+        char a[][];
+        a=new char[this.i][this.j];
+        for(int x=0;x<this.i;x++)
+            for(int y=0;y<this.j;y++)
+            {
+                a[x][y]=this.distribucion[x][y][z].sacarEstadoCubo();
+            }
+        return a;
+    }
+    
+    public boolean asignar(Arqueologo jugador, int x, int y, int z, int o, int eg, int ef, int badi, int broc){
+        return true;
+    }
        
 }
