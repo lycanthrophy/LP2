@@ -1,0 +1,10 @@
+Lata de Leche_0_37_1_null
+Papel Viejo_0_25_1_null
+Jeringa Usada_0_30_2_null
+Bolsa Plastico_0_34_2_null
+Manto Paracas_1_5_500_brocha
+Cabeza Clava_1_11_80_null
+Ceramica Policroma_1_20_80_badilejo
+Momia en Fardo Funerario_1_7_1000_badilejo
+Bisturi Paracas_1_4_50_badilejo
+Craneo con trapanacion_1_8_100_brocha

@@ -1,6 +1,14 @@
-package game;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lp2;
 
-class Coin{ // LANZANDO UNA MONEDA CON DIFERENTES PROBABILIDADES
+/**
+ *
+ * @author Kevin
+ */
+class Coin{
     private int proba;
     public Coin(int a)
         {   
@@ -37,5 +45,5 @@ class Coin{ // LANZANDO UNA MONEDA CON DIFERENTES PROBABILIDADES
             return true;
         else
             return false;
-        }
+        }    
 }
