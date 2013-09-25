@@ -1,0 +1,35 @@
+                              _____
+                             /      \
+                       _____/ _____ _\__	
+                            |     ^   ^\_            
+                          [       |______| 
+	  _________         \     .____./        _____               .__        
+	 /   _____/__ ________   ___________    /     \ _____ _______|__| ____  
+	 \_____  \|  |  \____ \_/ __ \_  __ \  /  \ /  \\__  \\_  __ \  |/  _ \ 
+	 /        \  |  /  |_> >  ___/|  | \/ /    Y    \/ __ \|  | \/  (  <_> )
+	/_______  /____/|   __/ \___  >__|    \____|__  (____  /__|  |__|\____/ 
+        	\/      |__|        \/                \/     \/                 
+ 				    ____.                            
+				    |    | ____   ____   ____   ______
+				    |    |/  _ \ /    \_/ __ \ /  ___/
+				/\__|    (  <_> )   |  \  ___/ \___ \ 
+				\________|\____/|___|  /\___  >____  >
+				                     \/     \/     \/
+
+
+	El objetivo del juego es el de conseguir la mayor cantidad de puntos considerando un
+	limite de tiempo y una cantidad de dinero.
+	
+	Para conseguir esto, el jugador debera comenzar seleccionando a los integrantes de su 
+	equipo de excavacion. Luego, seleccionara un mapa y asi empezara el juego.
+
+	Segun un tiempo de X horas y un monto de Y soles, el jugador debera asignar estrate-
+	gicamente a su equipo para poder optimizar sus recursos y obtener la mayor cantidad de
+	puntos con los tesoros descubiertos.
+
+	Recuerde...
+
+	Cualquier consulta sobre los comandos posibles en el juego pueden visualizarse con el 
+	comando Ayuda.
+
+	 					

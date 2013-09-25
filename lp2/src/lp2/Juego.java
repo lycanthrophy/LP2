@@ -5,7 +5,6 @@ import java.io.*;
  *
  * @author
  */
-//prueba
 //MAIN CLASS====================================================================
 public class Juego {
     //constantes
@@ -17,28 +16,6 @@ public class Juego {
     static Scanner in;
     
     static Mapa mimapa;
-    
-    private static void mensajeInicio(){
-        System.out.println("\t\t\t_____");
-        System.out.println("\t\t      /      \\");
-        System.out.println("\t\t_____/ _____ _\\___");
-        System.out.println("\t\t     |     ^   ^\\");
-        System.out.println("\t\t    [      |_____|");   
-
-        
-        System.out.println("  _________ \t      \\   /_______\\      _____               .__        ");
-        System.out.println(" /   _____/__ ________   ___________    /     \\ _____ _______|__| ____  ");
-        System.out.println(" \\_____  \\|  |  \\____ \\_/ __ \\_  __ \\  /  \\ /  \\\\__  \\\\_  __ \\  |/  _ \\ ");
-        System.out.println(" /        \\  |  /  |_> >  ___/|  | \\/ /    Y    \\/ __ \\|  | \\/  (  <_> )");
-        System.out.println("/_______  /____/|   __/ \\___  >__|    \\____|__  (____  /__|  |__|\\____/ ");
-        System.out.println("        \\/      |__|        \\/                \\/     \\/                 ");
-        System.out.println("     ____.                            ");
-        System.out.println("    |    | ____   ____   ____   ______");
-        System.out.println("    |    |/  _ \\ /    \\_/ __ \\ /  ___/");
-        System.out.println("/\\__|    (  <_> )   |  \\  ___/ \\___ \\ ");
-        System.out.println("\\________|\\____/|___|  /\\___  >____  >");
-        System.out.println("                     \\/     \\/     \\/ ");             
-    }
     
     private static int leeOpcion(){
         int option;
@@ -206,8 +183,22 @@ public class Juego {
         System.out.println("***");      
     }
     
-    private static void cmdAyuda(){
-        
+    private static void cmdAyuda() throws IOException{
+   //Manejo del archivo de ayuda
+    FileReader EscritorAyuda = new FileReader("Ayuda.txt");
+    while(EscritorAyuda.ready()){
+        System.out.print((char)EscritorAyuda.read());
+    }
+    EscritorAyuda.close(); 
+    }
+	
+    private static void mensajeInicio() throws IOException{
+    //Manejo del archivo de Introduccion
+    FileReader EscritorIntro = new FileReader("Introduccion.txt");
+    while(EscritorIntro.ready()){
+        System.out.print((char)EscritorIntro.read());
+    }
+    EscritorIntro.close();
     }
     
     private static void cmdError(){
@@ -216,11 +207,12 @@ public class Juego {
         System.out.println("***");        
     }
     
-    public static void main(String args[]) 
+    public static void main(String args[]) throws IOException 
     {
         //Imprimir pantalla de inicio
         mensajeInicio();
-          
+        cmdAyuda();
+        
         //variables locales e inicialización
         int retVal;
         int opcion;  
@@ -263,11 +255,12 @@ public class Juego {
                     System.out.println("Ingrese un comando:");
                     String comando;
                     comando = in.nextLine();
-                    
+                    comando = comando.trim();
                     //correr el comando
                     retVal = interp.verificaComando(comando, parametros); 
                     
                     //ejecutar la alternativa
+                    System.out.println("retVal " + retVal); 
                     switch(retVal){
                         case 0:
                             //salir

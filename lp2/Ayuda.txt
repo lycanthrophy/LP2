@@ -1,0 +1,44 @@
+
+	Los comandos que se pueden utilizar en el juego son:
+
+	- Asignar x:< > y:< > z:< > o:< > eg:< > ef:< > ba:< > br:< >
+	
+			Permite asignar a un grupo del equipo a un lugar especi-
+			fico. El explorador debe seleccionar las corrdenadas x, y,
+			z y la cantidad de obreros (o), alumnos de estudios genera-
+			les (eg) y alumnos de facultad (ef).
+			
+			Ejemplo: Asignar x:<1> y:<1> z:<1> o:<1> eg:<2> ef:<2> ba:<1> br:<1>
+	
+	- Desasignar x:<> y:<> z:<>
+	
+			Permite desasignar al grupo que haya sido asignado a un lu-
+			gar o coordenada(x,y,z) en específico. Luego el explorador 
+			podrá volver a disponer de ellos para futuras asignaciones.
+	
+			Ejemplo: Desasignar x:<1> y:<1> z:<1>
+			
+	- Excavar
+		
+			Permite mandar a los grupos asignados a los lugares de 
+			excavación hasta que alguno de ellos (el que termine 
+			primero) finalice su tarea.
+	
+			Ejemplo: Excavar
+	
+	- VerNivel <numero_de_nivel>
+	
+			Permite ver el nivel de terreno que el explorador desee.
+			Se muestran además los lugares aun sin excavar, los ya
+			excavados, los que se están excavando, los asignados y en
+			los que se encontraron tesoros.
+	
+			Ejemplo: VerNivel <1>
+	
+	- Salir
+		
+			Permite al explorador salir del juego sin grabar lo avanzado
+			hasta ese momento.
+
+			Ejemplo: Salir
+

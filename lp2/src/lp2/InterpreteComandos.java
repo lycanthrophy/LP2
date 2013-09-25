@@ -10,11 +10,12 @@ import java.io.*;
  *
  * @author Kevin
  */
-class InterpreteComandos {
+class InterpreteComandos{
+    
     private boolean esEntero(String s){
         try{
             Integer.parseInt(s);
-        } catch(NumberFormatException e){
+        }catch(NumberFormatException e){
             return false;
         }
         return true;    
@@ -25,11 +26,11 @@ class InterpreteComandos {
         int delim1, delim2;
         
         while (s.compareTo("")!=0){
-
             delim1=s.indexOf('<');
             delim2=s.indexOf('>');
             if ((delim1 < delim2)&&(delim1!= -1)&&(delim2!=-1)){
                 cadAux = s.substring(delim1+1, delim2);
+                cadAux = cadAux.trim();
                 if (esEntero(cadAux)){
                     parametros.add(Integer.parseInt(cadAux));
                     s = s.substring(delim2+1);
@@ -81,8 +82,8 @@ class InterpreteComandos {
         else if (comando.compareTo("asignar")==0){
              if (conParametros){
                 comando = s.substring(indice);
-                if (obtenerParametros(comando,parametros)==6){
-                    rValue = 2;
+                if (obtenerParametros(comando,parametros)==8){
+                    rValue = 1;
                 }
                 else{
                     return -1;
@@ -96,7 +97,7 @@ class InterpreteComandos {
             if (conParametros){
                 comando = s.substring(indice);
                 if (obtenerParametros(comando,parametros)==3){
-                    rValue = 3;
+                    rValue = 2;
                 }
                 else{
                     return -1;
@@ -110,7 +111,7 @@ class InterpreteComandos {
              if (conParametros){
                  comando = s.substring(indice);
                 if (obtenerParametros(comando,parametros)==1){
-                    rValue = 4;
+                    rValue = 3;
                 }
                 else{
                     return -1;
@@ -125,7 +126,7 @@ class InterpreteComandos {
                 rValue = -1;
             }
             else{
-                rValue = 5;
+                rValue = 4;
             }            
         }
         else if (comando.compareTo("ayuda")==0){
@@ -133,7 +134,7 @@ class InterpreteComandos {
                 rValue = -1;
             }
             else{
-                rValue = 6;
+                rValue = 5;
             }            
         }
         else{
