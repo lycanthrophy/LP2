@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 /**
  *
- * @author Daniel
+ * @author
  */
 //prueba
 //MAIN CLASS====================================================================
