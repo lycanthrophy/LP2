@@ -54,6 +54,7 @@ class Cubo implements Dibujable{
         {
             tipoCubo='R';// ES ROCA
             this.dificultad=100;  //VIDA
+            this.excavable=false;
         }
         else
         {
@@ -180,7 +181,30 @@ class Cubo implements Dibujable{
                         interrup=moneda.lanzar();
             }
         return miListaObjetos.get(i);
-    }    
+    }
+    
+    public char sacarEstadoCubo()
+    {
+        if (this.dificultad>0)
+            {
+            if(this.excavable)
+                if(this.asignado){
+                    return '*';
+                }
+                else{
+                    return this.tipoCubo;
+                }
+            else    
+                return '.';
+            }
+        else
+            {
+            if (this.pieza.getCivi()>0)
+                return '-';
+            else
+                return ' ';
+            }
+    }
     
     public void imprime(){
         

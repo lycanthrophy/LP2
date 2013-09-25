@@ -46,8 +46,6 @@ public class Juego {
         option = in.nextInt();
         in.nextLine();
         
-        in.close();
-        
         return option;
     }
     
@@ -164,17 +162,19 @@ public class Juego {
     }
     
      private static void cmdAsignar(ArrayList<Integer> parametros){
-//        //ejecuta asignar
-//        System.out.println("***ASIGNAR***");
-//        boolean b;
-//        //b = mimapa.asignar(parametros.get(0), parametros.get(1), parametros.get(2), parametros.get(3), parametros.get(4), parametros.get(5));
-//        if (b){
-//            System.out.println("Asignacion exitosa");
-//        }
-//        else{
-//            System.out.println("No se pudo asignar el equipo al cubo especificado");
-//        }
-//        System.out.println("***"); 
+        //ejecuta asignar
+        System.out.println("***ASIGNAR***");
+        
+        //preparar variables
+        boolean b;
+        b = mimapa.asignar(jugador, parametros.get(0), parametros.get(1), parametros.get(2), parametros.get(3), parametros.get(4), parametros.get(5), parametros.get(6), parametros.get(7));
+        if (b){
+            System.out.println("Asignacion exitosa");
+        }
+        else{
+            System.out.println("No se pudo asignar el equipo al cubo especificado");
+        }
+        System.out.println("***"); 
     }
     
     private static void cmdDesasignar(ArrayList<Integer> parametros){
@@ -316,5 +316,6 @@ public class Juego {
                 System.out.println("***");
             }
         }
+        in.close();
     }//FIN MAIN
 }

@@ -1,7 +1,7 @@
-Lata de Leche_0_37_1_null
-Papel Viejo_0_25_1_null
-Jeringa Usada_0_30_2_null
-Bolsa Plastico_0_34_2_null
+Lata de Leche_0_37_0_null
+Papel Viejo_0_25_0_null
+Jeringa Usada_0_30_0_null
+Bolsa Plastico_0_34_0_null
 Manto Paracas_1_5_500_brocha
 Cabeza Clava_1_11_80_null
 Ceramica Policroma_1_20_80_badilejo
